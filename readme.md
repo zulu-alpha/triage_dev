@@ -49,7 +49,3 @@ For development of the Zulu-Alpha Triage training script, called `multi_manikin.
 
     	damageTypes: bullet, grenade, explosive, shell, vehiclecrash, collision,
     	backblast, stab, punch, falling, ropeburn, drowning, unknown
-
-## License
-
-MiT
