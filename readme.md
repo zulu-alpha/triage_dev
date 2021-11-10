@@ -45,7 +45,7 @@ For development of the Zulu-Alpha Triage training script, called `multi_manikin.
     	Valid cone objects are: RoadCone_L_F, Land_RoadCone_01_F, RoadCone_F
 
     Reference:
-    	Body parts: Head, Body, LeftArm, RightArm, ""LeftLeg"", RightLeg
+    	Body parts: Head, Body, LeftArm, RightArm, LeftLeg, RightLeg
 
     	damageTypes: bullet, grenade, explosive, shell, vehiclecrash, collision,
     	backblast, stab, punch, falling, ropeburn, drowning, unknown
