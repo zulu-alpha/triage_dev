@@ -8,14 +8,14 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=120;
+		nextID=194;
 	};
 	class Camera
 	{
-		pos[]={3836.8245,29.378599,6596.748};
-		dir[]={-0.38452321,-0.75084567,-0.53700536};
-		up[]={-0.43713361,0.66047758,-0.61047834};
-		aside[]={-0.81305516,-5.052425e-008,0.58218849};
+		pos[]={3825.9019,36.304462,6604.6299};
+		dir[]={0.054884925,-0.88232374,-0.46743345};
+		up[]={0.10289347,0.47064093,-0.87630337};
+		aside[]={-0.99317682,1.1670636e-008,-0.11661653};
 	};
 };
 binarizationWanted=0;
@@ -26,6 +26,7 @@ addons[]=
 	"cba_xeh",
 	"A3_Signs_F",
 	"ace_medical_treatment",
+	"aceP_circulation",
 	"A3_Ui_F",
 	"A3_Supplies_F_Heli_CargoNets",
 	"alive_sys_profile",
@@ -45,7 +46,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			className="A3_Structures_F_Mark";
@@ -76,78 +77,84 @@ class AddonsMetaData
 		};
 		class Item4
 		{
+			className="aceP_circulation";
+			name="ACEP - ACE - Circulation";
+			author="Katalam";
+		};
+		class Item5
+		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item6
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
 			className="ALiVE_sys_profile";
 			name="alive_sys_profile";
 			author="ALiVE Mod Team";
 		};
-		class Item7
+		class Item8
 		{
 			className="ALiVE_SYS_playeroptions";
 			name="alive_sys_playeroptions";
 			author="ALiVE Mod Team";
 		};
-		class Item8
+		class Item9
 		{
 			className="ALiVE_SYS_LOGISTICS";
 			name="alive_sys_logistics";
 			author="ALiVE Mod Team";
 		};
-		class Item9
+		class Item10
 		{
 			className="ALiVE_main";
 			name="alive_main";
 			author="ALiVE Mod Team";
 		};
-		class Item10
+		class Item11
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item12
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item14
+		class Item15
 		{
 			className="acre_api";
 			name="ACRE2 - API";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item15
+		class Item16
 		{
 			className="ALiVE_sup_combatsupport";
 			name="alive_sup_combatsupport";
@@ -215,20 +222,20 @@ class Mission
 	};
 	class Entities
 	{
-		items=26;
+		items=44;
 		class Item0
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3821.2344,5.0172772,6574.3623};
-				angles[]={0,1.7672639,0};
+				position[]={3821.2092,5.0172772,6572.522};
+				angles[]={-0,1.7672681,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{this setVariable [ " \n "    ""multi_manikin_casualty"",  " \n "    [" \n "        [0.75, ""RightLeg"", ""bullet""]," \n "        [0.8, ""Body"", ""grenade""]," \n "        [0.9, ""LeftLeg"", ""bullet""]" \n "    ],  " \n "    true" \n "];}";
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n " " \n "       [0.75, ""RightLeg"", ""bullet""], " \n "       [0.75, ""body"", ""bullet""], " \n "       [0.9, ""LeftLeg"", ""bullet""], " \n "       [0.8, ""head"", ""grenade""] " \n "   ],   " \n "    true " \n "]; " \n "}";
 			};
 			id=0;
 			type="ShootingMat_01_Olive_F";
@@ -261,8 +268,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3823.781,5,6591.4009};
-				angles[]={0,3.8616631,0};
+				position[]={3823.7563,5,6589.561};
+				angles[]={-0,3.8616631,0};
 			};
 			init="nul = [this] execVM ""multi_manikin.sqf"";";
 			id=1;
@@ -273,7 +280,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3822.4077,5.3521061,6591.7642};
+				position[]={3822.3831,5.3521061,6589.9243};
 				angles[]={-0,3.861659,0};
 			};
 			side="Empty";
@@ -289,14 +296,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3824.5254,5.0172772,6572.8057};
-				angles[]={0,4.9088564,0};
+				position[]={3824.5002,5.0172772,6570.9663};
+				angles[]={-0,4.9088607,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{this setVariable [ " \n "    ""multi_manikin_casualty"",  " \n "    [" \n "        [1, ""Head"", ""bullet""]" \n "    ],  " \n "    true" \n "];}";
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [0.8, ""body"", ""bullet""], " \n "       [0.4, ""leftleg"", ""bullet""], " \n "       [0.7, ""body"", ""bullet""], " \n "       [0.8, ""rightleg"", ""bullet""], " \n "       [0.6, ""leftarm"", ""bullet""], " \n "       [0.4, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
 			};
 			id=3;
 			type="ShootingMat_01_Olive_F";
@@ -329,8 +336,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3825.416,5.0172772,6570.0303};
-				angles[]={0,5.6942549,0};
+				position[]={3825.3914,5.0172772,6568.1904};
+				angles[]={-0,5.6942549,0};
 			};
 			side="Empty";
 			flags=4;
@@ -369,14 +376,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3820.0078,5.0172772,6571.4482};
-				angles[]={0,0.72006607,0};
+				position[]={3819.9834,5.0172772,6569.6084};
+				angles[]={-0,0.72007048,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{this setVariable [ " \n "    ""multi_manikin_casualty"",  " \n "    [" \n "        [1, ""body"", ""shell""]" \n "    ],  " \n "    true" \n "];}";
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n "       [1, ""body"", ""shell""], " \n "       [1, ""body"", ""shell""], " \n "       [1, ""body"", ""shell""] " \n "   ],   " \n "    true " \n "]; " \n "}";
 			};
 			id=5;
 			type="ShootingMat_01_Olive_F";
@@ -409,14 +416,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3823.918,5.0172772,6576.6631};
-				angles[]={0,3.3380604,0};
+				position[]={3823.8931,5.0172772,6574.8232};
+				angles[]={0,3.3380644,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{this setVariable [ " \n "    ""multi_manikin_casualty"",  " \n "    [" \n "        [1, ""Body"", ""grenade""]," \n "        [1, ""LeftLeg"", ""bullet""]" \n "    ],  " \n "    true" \n "];}";
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n "       [0.5, ""body"", ""shell""], " \n "       [0.5, ""body"", ""bullet""], " \n "       [0.4, ""leftleg"", ""bullet""], " \n "       [0.8, ""rightleg"", ""grenade""], " \n "       [0.6, ""leftarm"", ""bullet""], " \n "       [0.6, ""body"", ""shell""], " \n "       [0.5, ""body"", ""bullet""], " \n "       [0.4, ""leftleg"", ""bullet""], " \n "       [0.8, ""rightleg"", ""grenade""], " \n "       [0.6, ""leftarm"", ""bullet""], " \n "       [0.5, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
 			};
 			id=6;
 			type="ShootingMat_01_Olive_F";
@@ -449,14 +456,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3828.0996,5.0172772,6572.3311};
-				angles[]={0,5.4324551,0};
+				position[]={3828.0754,5.0172772,6570.4912};
+				angles[]={-0,5.4324594,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="call{this setVariable [ " \n "    ""multi_manikin_casualty"",  " \n "    [" \n "        [0.1, ""body"", ""bullet""]" \n "    ],  " \n "    true" \n "];}";
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [1, ""body"", ""bullet""], " \n "       [1, ""body"", ""shell""], " \n "       [1, ""leftleg"", ""bullet""], " \n "       [1, ""rightarm"", ""bullet""], " \n "       [0.7, ""head"", ""bullet""] " \n "   ],    " \n "    true " \n "]; " \n "}";
 			};
 			id=7;
 			type="ShootingMat_01_Olive_F";
@@ -489,8 +496,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3822.5938,5.0172772,6569.8447};
-				angles[]={0,6.2178535,0};
+				position[]={3822.5691,5.0172772,6568.0049};
+				angles[]={-0,6.2178535,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2577,8 +2584,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3819.052,5.0014391,6595.8984};
-						angles[]={0,3.0912933,0};
+						position[]={3819.052,5.0014391,6595.8989};
+						angles[]={0,3.0912921,0};
 					};
 					side="West";
 					flags=4;
@@ -2587,6 +2594,7 @@ class Mission
 						skill=0.60000002;
 						init="nul = [this, ""grunt"", ""Dragon'1""] call zamf_fnc_team;";
 						description="1 [R]@Dragon'1";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=55;
@@ -3591,7 +3599,6 @@ class Mission
 					{
 						init="nul = [this, ""medic"", ""Dragon'5""] call zamf_fnc_team;";
 						description="[PM]@Dragon'5";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=88;
@@ -4754,16 +4761,632 @@ class Mission
 				nAttributes=11;
 			};
 		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3836.8279,5.0172772,6572.5508};
+				angles[]={0,1.7672681,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n " " \n "       [0.55, ""RightLeg"", ""bullet""], " \n "       [0.64, ""body"", ""bullet""], " \n "       [0.3, ""LeftLeg"", ""bullet""], " \n "       [0.4, ""head"", ""grenade""] " \n "   ],   " \n "    true " \n "]; " \n "}";
+			};
+			id=165;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item27
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3839.375,5,6589.5903};
+				angles[]={-0,3.8616631,0};
+			};
+			init="nul = [this] execVM ""multi_manikin.sqf"";";
+			id=166;
+			type="VirtualAISquad";
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3838.0017,5.3521061,6589.9536};
+				angles[]={-0,3.861659,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=167;
+			type="RoadCone_L_F";
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3840.1189,5.0172772,6570.9961};
+				angles[]={-0,4.9088607,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n " " \n "   [ " \n "       [0.6, ""body"", ""bullet""], " \n "       [0.3, ""leftleg"", ""bullet""], " \n "       [0.4, ""body"", ""bullet""], " \n "       [0.4, ""leftarm"", ""bullet""], " \n "       [0.2, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
+			};
+			id=168;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3841.01,5.0172772,6568.2202};
+				angles[]={0,5.6942587,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n " " \n "       [0.4, ""Body"", ""grenade""], " \n " " \n "       [0.4, ""RightLeg"", ""bullet""], " \n " " \n "       [0.4, ""Body"", ""grenade""], " \n " " \n "       [0.5, ""LeftArm"", ""bullet""] " \n "   ],  " \n "    true " \n "]; " \n "}";
+			};
+			id=169;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3835.6021,5.0172772,6569.6382};
+				angles[]={0,0.72007048,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [1, ""body"", ""shell""], " \n "       [1, ""body"", ""shell""] " \n "   ],   " \n "    true " \n "]; " \n "}";
+			};
+			id=170;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item32
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3839.512,5.0172772,6574.853};
+				angles[]={0,3.3380644,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n " " \n " " \n "   [ " \n "       [0.2, ""body"", ""shell""], " \n "       [0.4, ""body"", ""bullet""], " \n "       [0.3, ""leftleg"", ""bullet""], " \n "       [0.3, ""rightleg"", ""grenade""], " \n "       [0.4, ""leftarm"", ""bullet""], " \n "       [0.3, ""body"", ""shell""], " \n "       [0.4, ""body"", ""bullet""], " \n "       [0.3, ""leftleg"", ""bullet""], " \n "       [0.5, ""rightleg"", ""grenade""], " \n "       [0.4, ""leftarm"", ""bullet""], " \n "       [0.3, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
+			};
+			id=171;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item33
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3843.6941,5.0172772,6570.52};
+				angles[]={-0,5.4324594,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n " " \n "   [ " \n "       [1, ""body"", ""shell""], " \n "       [1, ""leftleg"", ""bullet""], " \n "       [0.5, ""rightarm"", ""bullet""], " \n "       [0.7, ""head"", ""bullet""] " \n "   ],    " \n "    true " \n "]; " \n "}";
+			};
+			id=172;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item34
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3838.188,5.0172772,6568.0342};
+				angles[]={0,6.2178574,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n " " \n "       [0.4, ""LeftLeg"", ""bullet""], " \n " " \n "       [0.2, ""Body"", ""grenade""], " \n " " \n "       [0.3, ""RightLeg"", ""explosive""], " \n " " \n "       [0.1, ""RightLeg"", ""bullet""], " \n " " \n "       [0.2, ""head"", ""falling""] " \n "   ],  " \n "    true " \n "]; " \n "}";
+			};
+			id=173;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item35
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3853.761,5.0172772,6572.5928};
+				angles[]={0,1.7672681,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n "   " \n "   [ " \n "       [0.55, ""RightLeg"", ""bullet""], " \n "       [0.64, ""body"", ""bullet""], " \n "       [0.4, ""head"", ""grenade""] " \n "   ],   " \n "    true " \n "]; " \n "}";
+			};
+			id=185;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item36
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3856.3086,5,6589.6323};
+				angles[]={-0,3.8616631,0};
+			};
+			init="nul = [this] execVM ""multi_manikin.sqf"";";
+			id=186;
+			type="VirtualAISquad";
+		};
+		class Item37
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3854.9353,5.3521061,6589.9956};
+				angles[]={-0,3.861659,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=187;
+			type="RoadCone_L_F";
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3857.052,5.0172772,6571.0381};
+				angles[]={-0,4.9088607,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n "       [0.5, ""body"", ""bullet""], " \n "       [0.3, ""leftleg"", ""bullet""], " \n "       [0.3, ""leftarm"", ""bullet""], " \n "       [0.2, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
+			};
+			id=188;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3857.9441,5.0172772,6568.2622};
+				angles[]={0,5.6942587,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [0.3, ""Body"", ""grenade""], " \n "       [0.3, ""RightLeg"", ""bullet""], " \n "       [0.3, ""Body"", ""grenade""], " \n "       [0.3, ""LeftArm"", ""bullet""] " \n "   ],  " \n "    true " \n "]; " \n "}";
+			};
+			id=189;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item40
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3852.5359,5.0172772,6569.6802};
+				angles[]={0,0.72007048,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n "       [1, ""body"", ""shell""], " \n "       [0.5, ""leftarm"", ""bullet""] " \n " " \n "   ],   " \n "    true " \n "]; " \n "}";
+			};
+			id=190;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3856.446,5.0172772,6574.895};
+				angles[]={0,3.3380644,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [0.2, ""body"", ""shell""], " \n "       [0.4, ""body"", ""bullet""], " \n "       [0.3, ""rightleg"", ""grenade""], " \n "       [0.4, ""leftarm"", ""bullet""], " \n "       [0.4, ""leftarm"", ""bullet""], " \n "       [0.3, ""Head"", ""bullet""] " \n "   ],       " \n "    true " \n "]; " \n "}";
+			};
+			id=191;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3860.6279,5.0172772,6570.562};
+				angles[]={-0,5.4324594,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n "   [ " \n "       [0.5, ""body"", ""shell""], " \n "       [0.5, ""leftleg"", ""bullet""], " \n "       [0.3, ""rightarm"", ""bullet""], " \n "       [0.2, ""head"", ""bullet""] " \n "   ],    " \n "    true " \n "]; " \n "}";
+			};
+			id=192;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3855.1221,5.0172772,6568.0762};
+				angles[]={0,6.2178574,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call " \n "{ " \n "    this setVariable[ " \n "   ""multi_manikin_casualty"", " \n " " \n " " \n "   [ " \n "       [0.3, ""LeftLeg"", ""bullet""], " \n "       [0.2, ""Body"", ""grenade""], " \n "       [0.3, ""RightLeg"", ""explosive""], " \n "       [0.2, ""head"", ""falling""] " \n "   ],  " \n "    true " \n "]; " \n "}";
+			};
+			id=193;
+			type="ShootingMat_01_Olive_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"", _value, true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=8;
+			nextID=24;
 		};
 		class Links
 		{
-			items=8;
+			items=24;
 			class Item0
 			{
 				linkID=0;
@@ -4839,6 +5462,166 @@ class Mission
 				linkID=7;
 				item0=8;
 				item1=1;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=167;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item9
+			{
+				linkID=9;
+				item0=165;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item10
+			{
+				linkID=10;
+				item0=168;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item11
+			{
+				linkID=11;
+				item0=169;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item12
+			{
+				linkID=12;
+				item0=170;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item13
+			{
+				linkID=13;
+				item0=172;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item14
+			{
+				linkID=14;
+				item0=171;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item15
+			{
+				linkID=15;
+				item0=173;
+				item1=166;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item16
+			{
+				linkID=16;
+				item0=187;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item17
+			{
+				linkID=17;
+				item0=185;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item18
+			{
+				linkID=18;
+				item0=188;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item19
+			{
+				linkID=19;
+				item0=189;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item20
+			{
+				linkID=20;
+				item0=190;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item21
+			{
+				linkID=21;
+				item0=192;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item22
+			{
+				linkID=22;
+				item0=191;
+				item1=186;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item23
+			{
+				linkID=23;
+				item0=193;
+				item1=186;
 				class CustomData
 				{
 					type="Sync";
